@@ -1,0 +1,8 @@
+.main-review{
+    display: flex;
+    text-align: center;
+}
+
+.high{
+    font-size: 1rem;
+}

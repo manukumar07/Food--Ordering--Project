@@ -1,11 +1,9 @@
 import React from 'react'
-
+import "./Review.css"
 
 function Features() {
   return (
-    
-      <h2>Hello</h2>
-    
+    <h2 className='high'>hello</h2>
   )
 }
 
