@@ -1,43 +1,46 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import "./Navbar.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import 'semantic-ui-css/semantic.min.css'
-import Carousel1 from '../Carousel1';
+import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+// import { ReactComponent as Hamburger } from '../../assets/icons/hamburger.svg'
+// import { ReactComponent as Brand } from '../../assets/icons/logo.svg'
+import './Navbar.css'
 
-// import { fab } from '@fortawesome/free-brands-svg-icons'
-function Navbar() {
+const Navbar = () => {
+  const [showNavbar, setShowNavbar] = useState(false)
+
+  const handleShowNavbar = () => {
+    setShowNavbar(!showNavbar)
+  }
+
   return (
-    <>
-      <nav class="navbar">
-      <a href="#" class="logo">Logo</a>
-
-      <ul class="nav-links">
-      <li>
-      <Link to="/" className='a'>Home</Link>
-
-      </li>
-    <li>
-    <Link to="/features" className='a'>Features</Link>
-    </li>
-    <li>
-    <Link to="/products" className='a'>Products</Link>
-    </li>
-    <li>
-    <Link to="/categories" className='a'>Categories</Link>
-    </li>
-    <li>
-    <Link to="/review" className='a'>Review</Link>
-    </li>
-  </ul>
-  {/* <div class="burger">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-  {/* </div> */}
-
-</nav>
-    </>
+    <nav className="navbar">
+      <div className="container">
+        <div className="logo">
+          <h4>Logo</h4>
+        </div>
+        <div className="menu-icon" onClick={handleShowNavbar}>
+          <img src='' alt=''></img>
+        </div>
+        <div className={`nav-elements  ${showNavbar && 'active'}`}>
+          <ul>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/blog">Blog</NavLink>
+            </li>
+            <li>
+              <NavLink to="/projects">Projects</NavLink>
+            </li>
+            <li>
+              <NavLink to="/about">About</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact">Contact</NavLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   )
 }
 

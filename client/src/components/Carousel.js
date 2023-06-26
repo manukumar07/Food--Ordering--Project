@@ -1,10 +1,9 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Carousel from 'react-bootstrap/Carousel';
 
-function Carousel1() {
-    return (
-      <Carousel>
+const Carousel = () => {
+  return (
+    <>
+       <Carousel>
         <Carousel.Item>
           <img
             className="d-block w-100"
@@ -43,7 +42,8 @@ function Carousel1() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-    );
-  }
-  
-  export default Carousel1;
+    </>
+  )
+}
+
+export default Carousel
